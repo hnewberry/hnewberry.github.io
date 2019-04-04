@@ -11,11 +11,11 @@
         var cols = [
             {id: "seriesID", alias: "seriesID", dataType: tableau.dataTypeEnum.string},
             {id: "year", alias: "Year", dataType: tableau.dataTypeEnum.int},
-            {id: "period", alias: "Period", dataType: tableau.dataTypeEnum.string}, 
+            {id: "period", alias: "Period", dataType: tableau.dataTypeEnum.string},
             {id: "month", alias: "Month", dataType: tableau.dataTypeEnum.string},
-            {id: "fullDate", alias: "Full Date", dataType: tableau.dataTypeEnum.string},  
-            {id: "value", alias: "value", dataType: tableau.dataTypeEnum.int}, 
-            {id: "footnotes", alias: "footnotes", dataType: tableau.dataTypeEnum.string}            
+            {id: "fullDate", alias: "Full Date", dataType: tableau.dataTypeEnum.string},
+            {id: "value", alias: "value", dataType: tableau.dataTypeEnum.int},
+                    
         ];
 
         var tableInfo = {
@@ -69,7 +69,7 @@
                             "month": obj.data[i].periodName,
                             "fullDate": calcDate,
                             "value": obj.data[i].value,
-                            "footnotes": obj.data[i].footnotes[0].text
+
                         });
                     }
 
