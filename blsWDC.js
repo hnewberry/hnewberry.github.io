@@ -11,16 +11,16 @@
         var cols = [
             {id: "seriesID", alias: "seriesID", dataType: tableau.dataTypeEnum.string},
             {id: "year", alias: "Year", dataType: tableau.dataTypeEnum.int},
-            {id: "period", alias: "Period", dataType: tableau.dataTypeEnum.string}, 
+            {id: "period", alias: "Period", dataType: tableau.dataTypeEnum.string},
             {id: "month", alias: "Month", dataType: tableau.dataTypeEnum.string},
-            {id: "fullDate", alias: "Full Date", dataType: tableau.dataTypeEnum.string},  
-            {id: "value", alias: "value", dataType: tableau.dataTypeEnum.int}, 
-            {id: "footnotes", alias: "footnotes", dataType: tableau.dataTypeEnum.string}            
+            {id: "fullDate", alias: "Full Date", dataType: tableau.dataTypeEnum.string},
+            {id: "value", alias: "value", dataType: tableau.dataTypeEnum.int},
+            {id: "footnotes", alias: "footnotes", dataType: tableau.dataTypeEnum.string}
         ];
 
         var tableInfo = {
             id : "BLS",
-            alias : "UnemploymentData",
+            alias : "Observation Value",
             columns : cols
         };
         console.log('tableInfo');
@@ -45,7 +45,7 @@
             dataType: 'json',
             data: JSON.stringify(selectedData),
             type: 'POST',
-            url: 'https://cors-anywhere.herokuapp.com/https://api.bls.gov/publicAPI/v1/timeseries/data/',
+            url: 'https://cors-anywhere.herokuapp.com/https://api.bls.gov/publicAPI/v2/timeseries/data/',
             success: function(resp){
                 var resultSets = resp.Results,
                     tableData = [];
