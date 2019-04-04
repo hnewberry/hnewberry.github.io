@@ -1,5 +1,3 @@
-require("util").inspect.defaultOptions.depth = null;
-console.log(myObject);
 (function () {
     var myConnector = tableau.makeConnector();
     var selectedData = {
@@ -13,16 +11,16 @@ console.log(myObject);
         var cols = [
             {id: "seriesID", alias: "seriesID", dataType: tableau.dataTypeEnum.string},
             {id: "year", alias: "Year", dataType: tableau.dataTypeEnum.int},
-            {id: "period", alias: "Period", dataType: tableau.dataTypeEnum.string},
+            {id: "period", alias: "Period", dataType: tableau.dataTypeEnum.string}, 
             {id: "month", alias: "Month", dataType: tableau.dataTypeEnum.string},
-            {id: "fullDate", alias: "Full Date", dataType: tableau.dataTypeEnum.string},
-            {id: "value", alias: "value", dataType: tableau.dataTypeEnum.int},
-            {id: "footnotes", alias: "footnotes", dataType: tableau.dataTypeEnum.string}
+            {id: "fullDate", alias: "Full Date", dataType: tableau.dataTypeEnum.string},  
+            {id: "value", alias: "value", dataType: tableau.dataTypeEnum.int}, 
+            {id: "footnotes", alias: "footnotes", dataType: tableau.dataTypeEnum.string}            
         ];
 
         var tableInfo = {
             id : "BLS",
-            alias : "Observation Value",
+            alias : "UnemploymentData",
             columns : cols
         };
         console.log('tableInfo');
@@ -47,7 +45,7 @@ console.log(myObject);
             dataType: 'json',
             data: JSON.stringify(selectedData),
             type: 'POST',
-            url: 'https://cors-anywhere.herokuapp.com/https://api.bls.gov/publicAPI/v2/timeseries/data/',
+            url: 'https://cors-anywhere.herokuapp.com/https://api.bls.gov/publicAPI/v1/timeseries/data/',
             success: function(resp){
                 var resultSets = resp.Results,
                     tableData = [];
@@ -79,13 +77,10 @@ console.log(myObject);
                 console.log(tableData);
                 table.appendRows(tableData);
                 doneCallback();
-
             }
-          
+
         });
     };
-
-    }
 
     tableau.registerConnector(myConnector);
     $(document).ready(function () {
