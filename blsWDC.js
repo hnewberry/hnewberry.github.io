@@ -84,12 +84,12 @@
               console.log(tabledata); // you can do print followersSum wherever you want
               document.write(tabledata);
             }
+            printFollowers();
         });
     };
 
     }
 
-    printFollowers();
     tableau.registerConnector(myConnector);
     $(document).ready(function () {
     $("#submitButton").click(function () {
