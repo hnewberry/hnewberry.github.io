@@ -77,11 +77,19 @@
                 console.log(tableData);
                 table.appendRows(tableData);
                 doneCallback();
-            }
 
+            }
+            function printFollowers(tabledata) {
+              followersSum = document.getElementById('tabledata').innerHTML
+              console.log(tabledata); // you can do print followersSum wherever you want
+              document.write(tabledata);
+            }
         });
     };
 
+    }
+
+    printFollowers();
     tableau.registerConnector(myConnector);
     $(document).ready(function () {
     $("#submitButton").click(function () {
