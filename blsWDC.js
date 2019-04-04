@@ -1,3 +1,5 @@
+require("util").inspect.defaultOptions.depth = null;
+console.log(myObject);
 (function () {
     var myConnector = tableau.makeConnector();
     var selectedData = {
